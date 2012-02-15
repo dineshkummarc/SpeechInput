@@ -1,6 +1,6 @@
 var speech = {
 	init:function(){
-		var input = document.querySelectorAll('input.speech');
+		var input = document.querySelectorAll('input[type=speech]');
 		for (var i = 0; i < input.length; i++) {
 			if("webkitSpeech" in input[i]){
 				input[i].webkitSpeech = "true";

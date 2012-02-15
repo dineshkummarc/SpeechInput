@@ -1,4 +1,4 @@
-input.speech {
+input[type=speech] {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -8,6 +8,6 @@ input.speech {
 	width:20px;
 	color:transparent;
 }
-input.speech:focus {
+input[type=speech]:focus {
 	outline:none;
 }
