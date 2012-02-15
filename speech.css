@@ -1,0 +1,13 @@
+input.speech {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	border:none;
+	font-size:20px;
+	width:20px;
+	color:transparent;
+}
+input.speech:focus {
+	outline:none;
+}
