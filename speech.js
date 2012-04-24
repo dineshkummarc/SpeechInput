@@ -13,7 +13,9 @@ var Speech = function(config){
 	Speech.prototype.onerror = config.error || function(error){
 		console.log("Error:" + error);
 	};
-	Speech.prototype.nav();
+	if(config.nav == true){
+		Speech.prototype.nav();
+	}
 };
 Speech.prototype = {
 	error: function(error){
@@ -101,6 +103,7 @@ Speech.prototype = {
 		});
 	},
 	/*twitter: function(config){
+		Speech.prototype.nav();
 		this.ajax({
 			url:"http://search.twitter.com/search.json?include_entities=true&rpp=" + (config.max || "10") + "&q=" + config.query  + (!!(this.geo && config.nav)?"&geocode="+this.geo+","+config.radius || "2km":""),
 			method:"GET",
@@ -121,10 +124,9 @@ Speech.prototype.ajax.parse = function(data) {
     return JSON.parse(data);
 
 }
-
 /*
 TODO:
-	- Add WolframAlpha suppor
+	- Add WolframAlpha support
 	- Add Facebook support
 	- Add Vimeo support
 	- Finish Error Handler
