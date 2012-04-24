@@ -120,11 +120,12 @@ Speech.prototype.ajax.parse = function(data) {
     }
     return JSON.parse(data);
 
+}
 
 /*
 TODO:
-	- Add WolframAlpha support
-	- Add Flicker support
+	- Add WolframAlpha suppor
+	- Add Facebook support
 	- Add Vimeo support
 	- Finish Error Handler
 	- Create options object for API Keys
