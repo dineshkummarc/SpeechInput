@@ -47,7 +47,7 @@ Speech.prototype = {
 		function() {
 			console.log("Error: No callback specified");
 		};
-		if(config.method !== "GET" && config.method !== "POST" && config.method !== "HEAD"){
+		if (config.method !== "GET" && config.method !== "POST" && config.method !== "HEAD") {
 			config.method = "GET";
 		}
 		var xhr = new XMLHttpRequest();
@@ -78,28 +78,28 @@ Speech.prototype = {
 		}
 		return Speech.prototype.geo;
 	},
-	facebook: function(config){
+	facebook: function(config) {
 		if (!config.query) {
 			this.error(3);
 			return;
 		}
 		this.ajax({
-			url:"https://graph.facebook.com/search?type=post&limit=" + ((config.max).toString() || (10).toString()) + "&q=" + config.query,
-			method:"GET",
-			callback:function(data){
+			url: "https://graph.facebook.com/search?type=post&limit=" + ((config.max).toString() || (10).toString()) + "&q=" + config.query,
+			method: "GET",
+			callback: function(data) {
 				var FacebookData = [];
-				if(!!data.data){
-					data.data.forEach(function(entry,i){
+				if ( !! data.data) {
+					data.data.forEach(function(entry, i) {
 						FacebookData[i] = {};
-						switch(entry.type){
-							case "status":
-								break;
-							case "photo":
-								break;
-							case "link":
-								break;
-							case "video":
-								break;
+						switch (entry.type) {
+						case "status":
+							break;
+						case "photo":
+							break;
+						case "link":
+							break;
+						case "video":
+							break;
 						}
 					});
 					config.callback(FacebookData);
@@ -119,7 +119,7 @@ Speech.prototype = {
 			method: "GET",
 			callback: function(data) {
 				var YoutubeData = [];
-				if (!!data.feed.entry) {
+				if ( !! data.feed.entry) {
 					data.feed.entry.forEach(function(entry, i) {
 						YoutubeData[i] = {};
 						YoutubeData[i].title = entry.media$group.media$title.$t;
@@ -140,8 +140,9 @@ Speech.prototype = {
 				}
 			}
 		});
-	},
-	/*twitter: function(config) {
+	}
+	/*,
+	twitter: function(config) {
 		if (!config.query) {
 			this.error(3);
 			return;
